@@ -66,3 +66,35 @@ for i in range(len(matrix)): #len = 3 from 0 to 2, i = 0
         row_sum += matrix[i][j] # 0 += 1 = 1
 
         print("Row", i + 1, "Sum = ", row_sum)
+
+#Binary Search
+print("Binary search example:")
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        if arr[mid] == target:
+            return mid
+
+        elif arr[mid] < target:
+            low = mid + 1
+
+        else:
+            high = mid - 1
+
+    return -1
+
+
+arr = [10, 20, 30, 40, 50, 60, 70]
+
+target = 50
+
+result = binary_search(arr, target)
+
+if result != -1:
+    print("Element found at index:", result)
+else:
+    print("Element not found")
